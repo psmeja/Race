@@ -8,6 +8,7 @@ public class TimeCounter : MonoBehaviour
 
     public TextMeshProUGUI UICounter;
     public bool isCounterActive = false;
+    public string time = "";
     // Start is called before the first frame update
     void Start()
     {
@@ -23,10 +24,15 @@ public class TimeCounter : MonoBehaviour
 
         if(isCounterActive)
         {
-            UICounter.text = $"{minutes.ToString("00")}:{seconds.ToString("00")}";
+            time = $"{minutes.ToString("00")}:{seconds.ToString("00")}";
+            UICounter.text = time;
         }
     }
 
+    public string GetTime()
+    {
+        return time;
+    }
 
     public void StopCounter()
     {
